@@ -15,7 +15,7 @@ module.exports = {
         host: '0.0.0.0',
         hot: true,
         port: 3000,
-        quiet: true,
+        // quiet: true,
         useLocalIp: true
     },
     mode,
@@ -24,7 +24,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ]
             },
             {
                 test: /\.scss$/,

@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <Fragment>
                 <h1>Hello, world!</h1>
-                <p>It's a beautiful day 😀</p>
+                <p>It&apos;s a beautiful day 😀</p>
                 <p>Built with:</p>
                 <img src={logo} alt="Webpack"/>
             </Fragment>
