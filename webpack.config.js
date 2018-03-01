@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -54,9 +55,13 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'public')
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new htmlWebpackPlugin({
+            title: 'App',
+            template: './public/index.html'
+        })
     ]
 }
