@@ -8,7 +8,12 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     entry: './src/index.js',
     devServer: {
-        contentBase: './public'
+        contentBase: './public',
+        compress: true,
+        host: '0.0.0.0',
+        port: 3000,
+        quiet: true,
+        useLocalIp: true
     },
     mode,
     module: {
