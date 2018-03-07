@@ -11,7 +11,7 @@ module.exports = {
     entry: './src/index.js',
     devServer: {
         // Less messages in the browser console
-        clientLogLevel: 'error',
+        clientLogLevel: 'warning',
         contentBase: './public',
         historyApiFallback: {
             disableDotRule: true
