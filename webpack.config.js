@@ -10,12 +10,17 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
     entry: './src/index.js',
     devServer: {
+        // Less messages in the browser console
+        clientLogLevel: 'error',
         contentBase: './public',
-        compress: true,
+        historyApiFallback: {
+            disableDotRule: true
+        },
         host: '0.0.0.0',
         hot: true,
+        // Hide Webpack output (except for errors/warnings)
+        noInfo: true,
         port: 3000,
-        // quiet: true,
         useLocalIp: true
     },
     mode,
