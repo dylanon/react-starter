@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -44,18 +45,23 @@ module.exports = {
                         loader: 'css-loader'
                     },
                     {
-                        loader: 'sass-loader'
-                    }
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader'
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer({
+                                    browsers: [
+                                      '>1%',
+                                      'last 4 versions',
+                                      'Firefox ESR',
+                                      'not ie < 9', // React doesn't support IE8 anyway
+                                    ],
+                                    flexbox: 'no-2009',
+                                })
+                            ]
+                        }
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'sass-loader'
                     }
                 ]
             },
