@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 module.exports = merge(shared, {
     mode: 'development',
+    devtool: 'cheap-module-source-map',
     devServer: {
         // Less messages in the browser console
         clientLogLevel: 'warning',

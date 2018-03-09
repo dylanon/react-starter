@@ -5,6 +5,7 @@ const webpack = require('webpack');
 
 module.exports = merge(shared, {
     mode: 'production',
+    devtool: 'source-map',
     optimization: {
         minimize: true
     },
