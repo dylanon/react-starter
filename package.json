@@ -1,7 +1,8 @@
 {
   "name": "react-starter",
   "version": "0.1.0",
-  "description": "Starter files and build config for creating web apps with React.",
+  "description":
+    "Starter files and build config for creating web apps with React.",
   "main": "index.js",
   "author": "Dylan On",
   "license": "MIT",
@@ -38,7 +39,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
-    "preview": "webpack-dev-server --open config webpack.config.prod.js",
+    "preview": "webpack-dev-server --open --config webpack.config.prod.js",
     "start": "webpack-dev-server --open --config webpack.config.dev.js"
   }
 }
